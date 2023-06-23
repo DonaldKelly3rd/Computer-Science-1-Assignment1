@@ -1,0 +1,107 @@
+int main() {
+  //atexit(report_mem_leak);
+
+
+  //I/O files
+  FILE * ifp;
+  FILE * ofp;
+
+  ifp = fopen("cop3502-as1-input.txt", "r");
+
+  ofp = fopen("cop3502-as1-output-kelly-donald.txt", "w");
+
+
+
+  monster **monster_results;
+  //read text file
+  char buffer[255];
+
+  int lines_to_read = 0;
+  char monsterData[255];
+
+
+  int i = 0;
+  int firstchecker = 0;
+  int wordchecker = 0;
+  int index = 0;
+
+  while (get_next_nonblank_line(ifp, buffer, 255)) {
+
+   printf("%s\n", buffer);
+
+
+
+  }
+
+  //close(ifp);
+
+  //ifp = fopen("cop3502-as1-input.txt", "r");
+
+
+
+
+  while (!feof(ifp)) {
+
+      if (fgets(buffer, 255, ifp) > 0) {
+         remove_crlf(buffer);
+
+         while (buffer[i] != ' ') {
+            monsterData[i] = buffer[i];
+
+
+            i++;
+
+         }
+
+         if (firstchecker == 0) {
+            int numMonster = atoi(buffer);
+            monster_results = malloc(numMonster * sizeof(monster));
+
+
+
+
+            firstchecker = 1;
+
+            continue;
+         }
+
+          if (wordchecker == 0) {
+            monster_results[index]->id = atoi(monsterData);
+            index++;
+
+            wordchecker = 1;
+         }
+
+         if (wordchecker == 1) {
+            int MonsterSize = strlen(monsterData);
+
+            monster_results[index]->name = malloc((MonsterSize) * sizeof(char));
+
+            strcpy(monster_results[index]->name, monsterData);
+
+            wordchecker = 2;
+         }
+         if (wordchecker == 2) {
+            int elementType = strlen(monsterData);
+            monster_results[index]->element = malloc((elementType + 1) * sizeof(char));
+            strcpy(monster_results[index]->element, monsterData);
+
+            wordchecker = 3;
+         }
+         if (wordchecker == 3) {
+            monster_results[index]->population = atoi(monsterData);
+            index++;
+
+            wordchecker = 0;
+         }
+
+      }
+   fclose(ifp);
+   }
+
+
+
+
+
+  return 0;
+}

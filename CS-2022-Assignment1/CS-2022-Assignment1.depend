@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1653502704 source:c:\users\donal\downloads\leak_detector_c.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"leak_detector_c.h"
+
+1653502710 c:\users\donal\downloads\leak_detector_c.h
+
+1655146972 source:c:\users\donal\desktop\summer 2022 computer science 1  ucf\cs-2022-assignment1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"leak_detector_c.h"
+	"cop3502_as1.h"
+	"leak_detector_c.c"
+	<math.h>
+	<time.h>
+
+1654447941 c:\users\donal\desktop\summer 2022 computer science 1  ucf\cs-2022-assignment1\leak_detector_c.h
+
+1654447941 c:\users\donal\desktop\summer 2022 computer science 1  ucf\cs-2022-assignment1\cop3502_as1.h
+
+1654447941 c:\users\donal\desktop\summer 2022 computer science 1  ucf\cs-2022-assignment1\leak_detector_c.c
+
